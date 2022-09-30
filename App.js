@@ -1,22 +1,48 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {StyleSheet, View} from 'react-native';
+import 'react-native-gesture-handler';
 import {PersistGate} from 'redux-persist/integration/react';
 import {NativeBaseProvider} from 'native-base';
 import {store, persistor} from './Redux/store';
-import ConfigureAxios from './ConfigureAxios';
-import axios from 'axios';
 import Login from './src/Layouts/Login';
 import ChooseLoginOrRegister from './src/Layouts/ChooseLoginOrRegister';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {I18nManager} from 'react-native';
+I18nManager.forceRTL(true);
+
 const App = () => {
-  ConfigureAxios(axios, store);
+  const Stack = createStackNavigator();
 
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <NativeBaseProvider>
           <View style={styles.containerMainApp}>
-            <ChooseLoginOrRegister />
+            <NavigationContainer>
+              <Stack.Navigator initialRouteName="choose">
+                <Stack.Screen
+                  name="choose"
+                  component={ChooseLoginOrRegister}
+                  options={{headerShown: false}}
+                />
+                <Stack.Screen
+                  options={{
+                    title: '',
+                    headerStyle: {
+                      backgroundColor: 'white',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                      fontWeight: 'bold',
+                    },
+                  }}
+                  name="login"
+                  component={Login}
+                />
+              </Stack.Navigator>
+            </NavigationContainer>
           </View>
         </NativeBaseProvider>
       </PersistGate>

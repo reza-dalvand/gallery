@@ -11,7 +11,7 @@ import {
 import Lottie from 'lottie-react-native';
 import {CheckIcon, Icon, Input, Pressable, Stack, Button} from 'native-base';
 
-const ChooseLoginOrRegister = () => {
+const ChooseLoginOrRegister = ({navigation}) => {
   const [show, setShow] = React.useState(false);
 
   return (
@@ -27,7 +27,9 @@ const ChooseLoginOrRegister = () => {
         style={styles.logo}
         source={require('../../../assets/images/logo.png')}
       />
-      <TouchableOpacity style={styles.btnLogin}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('login')}
+        style={styles.btnLogin}>
         <Text style={styles.txtLogin}>ورود</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.btnRegister}>

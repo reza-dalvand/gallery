@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import styles from './styles';
 
 const Login = () => {
   return (
-    <View style={styles.containerMainApp}>
+    <View style={styles.container}>
       <Text style={{fontFamily: 'vazir', fontSize: 30}}>ورود</Text>
       {/* eslint-disable-next-line react-native/no-inline-styles */}
       <Text style={{fontFamily: 'Vazir', fontWeight: 'bold', fontSize: 20}}>
@@ -12,20 +13,5 @@ const Login = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  containerMainApp: {
-    padding: 1,
-    flex: 1,
-  },
-  txt_enter: {
-    fontSize: 18,
-    fontFamily: 'Vazir',
-  },
-  description: {
-    fontSize: 14,
-    fontFamily: 'Vazir',
-  },
-});
 
 export default Login;
