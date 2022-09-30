@@ -1,21 +1,24 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {PersistGate} from 'redux-persist/integration/react';
-
+import {NativeBaseProvider} from 'native-base';
 import {store, persistor} from './Redux/store';
 import ConfigureAxios from './ConfigureAxios';
 import axios from 'axios';
-
+import Login from './src/Layouts/Login';
+import ChooseLoginOrRegister from './src/Layouts/ChooseLoginOrRegister';
 const App = () => {
   ConfigureAxios(axios, store);
 
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <View style={styles.containerMainApp}>
-          <Text>hi</Text>
-        </View>
+        <NativeBaseProvider>
+          <View style={styles.containerMainApp}>
+            <ChooseLoginOrRegister />
+          </View>
+        </NativeBaseProvider>
       </PersistGate>
     </Provider>
   );
@@ -23,8 +26,10 @@ const App = () => {
 
 const styles = StyleSheet.create({
   containerMainApp: {
-    padding: 1,
+    fontFamily: 'Vazir',
+    padding: 2,
     flex: 1,
+    backgroundColor: 'white',
   },
 });
 
