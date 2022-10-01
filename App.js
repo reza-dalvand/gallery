@@ -3,18 +3,18 @@ import {Provider} from 'react-redux';
 import {StyleSheet, View} from 'react-native';
 import 'react-native-gesture-handler';
 import {PersistGate} from 'redux-persist/integration/react';
-import {NativeBaseProvider} from 'native-base';
+import {Button, NativeBaseProvider} from 'native-base';
 import {store, persistor} from './Redux/store';
 import Login from './src/Layouts/Login';
 import ChooseLoginOrRegister from './src/Layouts/ChooseLoginOrRegister';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {I18nManager} from 'react-native';
-I18nManager.forceRTL(true);
+import {Appearance} from 'react-native';
+import Register from './src/Layouts/Register';
 
 const App = () => {
   const Stack = createStackNavigator();
-
+  const colorScheme = Appearance.getColorScheme();
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -29,17 +29,31 @@ const App = () => {
                 />
                 <Stack.Screen
                   options={{
-                    title: '',
+                    title: 'ورود',
                     headerStyle: {
-                      backgroundColor: 'white',
+                      backgroundColor: '#f5f2f2',
                     },
-                    headerTintColor: '#fff',
+                    headerTintColor: 'black',
                     headerTitleStyle: {
                       fontWeight: 'bold',
                     },
                   }}
                   name="login"
                   component={Login}
+                />
+                <Stack.Screen
+                  options={{
+                    title: 'ثبت نام',
+                    headerStyle: {
+                      backgroundColor: '#f5f2f2',
+                    },
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                      fontWeight: 'bold',
+                    },
+                  }}
+                  name="register"
+                  component={Register}
                 />
               </Stack.Navigator>
             </NavigationContainer>
@@ -53,7 +67,7 @@ const App = () => {
 const styles = StyleSheet.create({
   containerMainApp: {
     fontFamily: 'Vazir',
-    padding: 2,
+    // padding: 2,
     flex: 1,
     backgroundColor: 'white',
   },

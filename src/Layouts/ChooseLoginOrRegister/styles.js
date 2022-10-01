@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {flex: 1, alignItems: 'center', backgroundColor: 'white'},
+  container: {flex: 1, alignItems: 'center', backgroundColor: '#f5f2f2'},
   lottie: {
     width: '70%',
     marginTop: '15%',

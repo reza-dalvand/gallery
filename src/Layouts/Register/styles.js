@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     fontFamily: 'vazir',
     fontSize: 30,
     fontWeight: 'bold',
-    marginTop: 5,
   },
   lottie: {
     width: '80%',
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
   },
   txtHaventAccount: {
     color: 'blue',
-    marginBottom: 20,
+    marginBottom: 10,
   },
 });
 
