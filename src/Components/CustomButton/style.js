@@ -2,9 +2,9 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   btnLarge: {
-    width: '95%',
+    width: '90%',
     backgroundColor: 'blue',
-    height: 45,
+    height: 50,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   },
   txtNoneStyle: {
     color: 'blue',
+    fontSize: 13,
   },
   txtWhite: {
     color: 'white',

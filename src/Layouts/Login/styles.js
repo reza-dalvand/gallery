@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f2f2',
+    backgroundColor: 'white',
   },
   containerWlcTxt: {textAlign: 'left', width: '90%'},
   wlcTxt: {

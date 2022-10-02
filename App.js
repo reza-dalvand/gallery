@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 import {StyleSheet, View} from 'react-native';
 import 'react-native-gesture-handler';
 import {PersistGate} from 'redux-persist/integration/react';
-import {Button, NativeBaseProvider} from 'native-base';
+import {NativeBaseProvider} from 'native-base';
 import {store, persistor} from './Redux/store';
 import Login from './src/Layouts/Login';
 import ChooseLoginOrRegister from './src/Layouts/ChooseLoginOrRegister';
@@ -36,6 +36,8 @@ const App = () => {
                     headerTintColor: 'black',
                     headerTitleStyle: {
                       fontWeight: 'bold',
+                      fontSize: 16,
+                      marginLeft: -20,
                     },
                   }}
                   name="login"
@@ -50,6 +52,8 @@ const App = () => {
                     headerTintColor: 'black',
                     headerTitleStyle: {
                       fontWeight: 'bold',
+                      fontSize: 16,
+                      marginLeft: -20,
                     },
                   }}
                   name="register"

@@ -1,9 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import styles from './styles';
-import {Icon, Input, Pressable, ScrollView, Stack} from 'native-base';
+import {ScrollView, Stack} from 'native-base';
 import Lottie from 'lottie-react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import CustomInput from '../../Components/CustomInput';
 import CustomButton from '../../Components/CustomButton';
 
@@ -11,9 +10,6 @@ const Register = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
-        <View style={styles.containerWlcTxt}>
-          {/*<Text style={styles.wlcTxt}>ساخت اکانت</Text>*/}
-        </View>
         <Lottie
           style={styles.lottie}
           source={require('../../../assets/images/loginAnimate.json')}
@@ -37,6 +33,7 @@ const Register = () => {
             />
           </Stack>
           <CustomButton text="ثبت نام" typeStyle="btnLarge" />
+          <View style={{marginTop: 100}} />
         </View>
       </View>
     </ScrollView>

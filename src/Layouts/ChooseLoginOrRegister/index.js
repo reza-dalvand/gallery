@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Lottie from 'lottie-react-native';
-import {CheckIcon, Icon, Input, Pressable, Stack, Button} from 'native-base';
+import CustomButton from '../../Components/CustomButton';
+import {background} from 'native-base/lib/typescript/theme/styled-system';
 
 const ChooseLoginOrRegister = ({navigation}) => {
   return (
@@ -20,21 +21,30 @@ const ChooseLoginOrRegister = ({navigation}) => {
         autoPlay
         loop
       />
-      <Text style={styles.titleText}> 𝖎𝖓𝖘𝖙𝖆 𝖘𝖙𝖔𝖗𝖞</Text>
+      <Text style={styles.titleText}>𝖎𝖓𝖘𝖙𝖆 𝖘𝖙𝖔𝖗𝖞</Text>
       <Image
         style={styles.logo}
         source={require('../../../assets/images/logo.png')}
       />
-      <TouchableOpacity
+      <CustomButton
         onPress={() => navigation.navigate('login')}
-        style={styles.btnLogin}>
-        <Text style={styles.txtLogin}>ورود</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+        text="ورود"
+        typeStyle="btnLarge"
+        btnAdditionStyles={{marginTop: 15}}
+      />
+
+      <CustomButton
         onPress={() => navigation.navigate('register')}
-        style={styles.btnRegister}>
-        <Text style={styles.txtRegister}>ثبت نام</Text>
-      </TouchableOpacity>
+        text="ثبت نام"
+        typeStyle="btnLarge"
+        txtAdditionStyles={{color: 'black'}}
+        btnAdditionStyles={{
+          backgroundColor: 'white',
+          borderWidth: 1,
+          borderColor: 'black',
+          marginTop: 10,
+        }}
+      />
       <TouchableOpacity>
         <Text style={styles.txtGuest}>ورود به عنوان مهمان</Text>
       </TouchableOpacity>

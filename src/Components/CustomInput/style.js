@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   inpLarge: {
-    width: '95%',
+    width: '90%',
     textAlign: 'right',
     padding: 5,
     borderColor: '#CDC9C3',

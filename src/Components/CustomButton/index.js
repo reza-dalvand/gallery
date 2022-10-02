@@ -13,6 +13,7 @@ const CustomButton = ({
 }) => {
   return (
     <TouchableOpacity
+      backgroundColor="red"
       onPress={() => onPress()}
       style={[styles[typeStyle], btnAdditionStyles]}>
       <Text style={[styles[btnTxtStyle], txtAdditionStyles]}>{text}</Text>
