@@ -1,70 +1,59 @@
-import React from 'react';
-import {Provider} from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {Provider, useDispatch, useSelector} from 'react-redux';
 import {StyleSheet, View} from 'react-native';
 import 'react-native-gesture-handler';
 import {PersistGate} from 'redux-persist/integration/react';
-import {NativeBaseProvider} from 'native-base';
+import {NativeBaseProvider, useColorMode, useColorModeValue} from 'native-base';
 import {store, persistor} from './Redux/store';
 import Login from './src/Layouts/Login';
 import ChooseLoginOrRegister from './src/Layouts/ChooseLoginOrRegister';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {Appearance} from 'react-native';
 import Register from './src/Layouts/Register';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {ChangeThemeMood} from './Redux/Reducers/systemReducer';
 
 const App = () => {
   const Stack = createStackNavigator();
-  const colorScheme = Appearance.getColorScheme();
+  const dispatch = useDispatch();
+
+  const {themeMood} = useSelector(state => state.systemReducer);
+
+  const HeaderBarIcon = () => {
+    return (
+      <Icon
+        style={{margin: 15}}
+        onPress={() => {
+          dispatch(ChangeThemeMood({themeMood: !themeMood}));
+        }}
+        name={themeMood ? 'sunny' : 'moon'}
+        size={25}
+        color={themeMood ? 'orange' : 'black'}
+      />
+    );
+  };
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <NativeBaseProvider>
-          <View style={styles.containerMainApp}>
-            <NavigationContainer>
-              <Stack.Navigator initialRouteName="choose">
-                <Stack.Screen
-                  name="choose"
-                  component={ChooseLoginOrRegister}
-                  options={{headerShown: false}}
-                />
-                <Stack.Screen
-                  options={{
-                    title: 'ورود',
-                    headerStyle: {
-                      backgroundColor: '#f5f2f2',
-                    },
-                    headerTintColor: 'black',
-                    headerTitleStyle: {
-                      fontWeight: 'bold',
-                      fontSize: 16,
-                      marginLeft: -20,
-                    },
-                  }}
-                  name="login"
-                  component={Login}
-                />
-                <Stack.Screen
-                  options={{
-                    title: 'ثبت نام',
-                    headerStyle: {
-                      backgroundColor: '#f5f2f2',
-                    },
-                    headerTintColor: 'black',
-                    headerTitleStyle: {
-                      fontWeight: 'bold',
-                      fontSize: 16,
-                      marginLeft: -20,
-                    },
-                  }}
-                  name="register"
-                  component={Register}
-                />
-              </Stack.Navigator>
-            </NavigationContainer>
-          </View>
-        </NativeBaseProvider>
-      </PersistGate>
-    </Provider>
+    <View style={styles.containerMainApp}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="choose">
+          <Stack.Group
+            screenOptions={{
+              headerStyle: {backgroundColor: themeMood ? '#f5f2f2' : '#0F4C75'},
+              title: themeMood ? 'روشن' : 'تاریک',
+              headerRight: () => <HeaderBarIcon />,
+              headerTintColor: themeMood ? 'black' : 'white',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                fontSize: 17,
+              },
+            }}>
+            <Stack.Screen name="choose" component={ChooseLoginOrRegister} />
+            <Stack.Screen name="login" component={Login} />
+            <Stack.Screen name="register" component={Register} />
+          </Stack.Group>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
   );
 };
 

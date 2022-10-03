@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 
 import RegisterReducer from './Reducers/RegisterReducer';
 import LoginReducer from './Reducers/LoginReducer';
+import systemReducer from './Reducers/systemReducer';
 import {configureStore} from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {persistStore, persistReducer} from 'redux-persist';
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   RegisterReducer,
   LoginReducer,
+  systemReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

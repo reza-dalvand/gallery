@@ -4,12 +4,12 @@ const styles = StyleSheet.create({
   container: {flex: 1, alignItems: 'center', backgroundColor: 'white'},
   lottie: {
     width: '70%',
-    marginTop: '15%',
+    marginTop: '8%',
   },
   titleText: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginTop: '15%',
+    marginTop: '5%',
     marginBottom: '3%',
   },
   logo: {width: 90, height: 90, borderRadius: 90 / 2},

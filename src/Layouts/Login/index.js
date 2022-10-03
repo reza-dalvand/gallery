@@ -5,6 +5,7 @@ import {ScrollView, Stack} from 'native-base';
 import Lottie from 'lottie-react-native';
 import CustomInput from '../../Components/CustomInput';
 import CustomButton from '../../Components/CustomButton';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Login = ({navigation}) => {
   return (
