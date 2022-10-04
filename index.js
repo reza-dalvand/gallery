@@ -8,21 +8,80 @@ import {persistor, store} from './Redux/store';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {NativeBaseProvider} from 'native-base/src/core/NativeBaseProvider';
+import {extendTheme} from 'native-base';
 
 I18nManager.forceRTL(true);
 
 ConfigureAxios(axios, store);
 
-const mainApp = () => {
+const mainApp = ({children}) => {
+  const theme = extendTheme({
+    components: {
+      // Button: {
+      //   baseStyle: () => {
+      //     return {
+      //       _dark: {bg: 'darkBlue.500'},
+      //       _light: {bg: 'darkBlue.500'},
+      //     };
+      //   },
+      // },
+      // Text: {
+      //   baseStyle: () => {
+      //     return {
+      //       _dark: {color: 'white'},
+      //       _light: {color: 'black'},
+      //     };
+      //   },
+      // },
+    },
+  });
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <NativeBaseProvider>
+        <NativeBaseProvider theme={theme}>
           <App />
         </NativeBaseProvider>
       </PersistGate>
     </Provider>
   );
 };
+// // Define the config
+// const config = {
+//   useSystemColorMode: false,
+//   initialColorMode: 'light',
+//   components: {
+//     Text: {
+//       baseStyle: (props: any) => {
+//         return {
+//           _light: {color: 'black'},
+//           _dark: {color: 'white'},
+//         };
+//       },
+//     },
+//     Button: {
+//       baseStyle: ({colorMode}) => {
+//         return {
+//           bg: colorMode === 'light' ? 'white' : 'white',
+//           // _light: {bg: 'info.600', color: 'white'},
+//           // _dark: {bg: 'error.600', color: 'white'},
+//         };
+//       },
+//     },
+//   },
+// };
+//
+// // extend the theme
+// const customTheme = extendTheme({config});
+// const mainApp = () => {
+//   return (
+//     <Provider store={store}>
+//       <PersistGate loading={null} persistor={persistor}>
+//         <NativeBaseProvider theme={customTheme}>
+//           <App />
+//         </NativeBaseProvider>
+//       </PersistGate>
+//     </Provider>
+//   );
+// };
 
 AppRegistry.registerComponent(appName, () => mainApp);

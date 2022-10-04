@@ -1,34 +1,31 @@
-import React, {useEffect, useState} from 'react';
-import {Provider, useDispatch, useSelector} from 'react-redux';
+import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {StyleSheet, View} from 'react-native';
 import 'react-native-gesture-handler';
-import {PersistGate} from 'redux-persist/integration/react';
-import {NativeBaseProvider, useColorMode, useColorModeValue} from 'native-base';
-import {store, persistor} from './Redux/store';
+import {useColorMode} from 'native-base';
 import Login from './src/Layouts/Login';
 import ChooseLoginOrRegister from './src/Layouts/ChooseLoginOrRegister';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Register from './src/Layouts/Register';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {ChangeThemeMood} from './Redux/Reducers/systemReducer';
 
 const App = () => {
   const Stack = createStackNavigator();
   const dispatch = useDispatch();
-
   const {themeMood} = useSelector(state => state.systemReducer);
+  const {colorMode, toggleColorMode} = useColorMode();
 
   const HeaderBarIcon = () => {
     return (
       <Icon
         style={{margin: 15}}
         onPress={() => {
-          dispatch(ChangeThemeMood({themeMood: !themeMood}));
+          toggleColorMode();
         }}
-        name={themeMood ? 'sunny' : 'moon'}
+        name={colorMode === 'light' ? 'sunny' : 'moon'}
         size={25}
-        color={themeMood ? 'orange' : 'black'}
+        color={colorMode === 'light' ? 'orange' : 'white'}
       />
     );
   };
@@ -38,10 +35,12 @@ const App = () => {
         <Stack.Navigator initialRouteName="choose">
           <Stack.Group
             screenOptions={{
-              headerStyle: {backgroundColor: themeMood ? '#f5f2f2' : '#0F4C75'},
-              title: themeMood ? 'روشن' : 'تاریک',
+              headerStyle: {
+                backgroundColor: colorMode === 'light' ? '#f5f2f2' : '#0F4C75',
+              },
+              title: colorMode === 'light' ? 'روشن' : 'تاریک',
               headerRight: () => <HeaderBarIcon />,
-              headerTintColor: themeMood ? 'black' : 'white',
+              headerTintColor: colorMode === 'light' ? 'black' : 'white',
               headerTitleStyle: {
                 fontWeight: 'bold',
                 fontSize: 17,
@@ -60,48 +59,9 @@ const App = () => {
 const styles = StyleSheet.create({
   containerMainApp: {
     fontFamily: 'Vazir',
-    // padding: 2,
     flex: 1,
     backgroundColor: 'white',
   },
 });
 
 export default App;
-// /**
-//  * Sample React Native App
-//  * https://github.com/facebook/react-native
-//  *
-//  * @format
-//  * @flow strict-local
-//  */
-//
-
-//
-// const App = () => {
-//   const [text, setText] = useState('');
-//   const [refresh, setRefresh] = useState(false);
-//
-//   return (
-//     <View style={styles.container}>
-//       <Pressable
-//         onPress={() =>
-//           Alert.alert('hi reza', 'chetori gigule', [
-//             {
-//               text: 'yse',
-//               onPress: () => console.log('yes'),
-//             },
-//             {
-//               text: 'no',
-//               onPress: () => console.log('yes'),
-//             },
-//           ])
-//         }
-//         style={styles.btn}>
-//         <Text>click</Text>
-//       </Pressable>
-//     </View>
-//   );
-// };
-//
-//
-// export default App;

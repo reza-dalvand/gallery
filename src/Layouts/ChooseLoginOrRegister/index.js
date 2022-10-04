@@ -1,15 +1,17 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React from 'react';
 import styles from './styles';
 import Lottie from 'lottie-react-native';
-import {Box, Text, Image, Button} from 'native-base';
-import {useSelector} from 'react-redux';
+import {Box, Text, Image, Button, useColorMode} from 'native-base';
 
 const ChooseLoginOrRegister = ({navigation}) => {
-  const {themeMood} = useSelector(state => state.systemReducer);
-
+  const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <Box alignItems="center" bg="#1B262C" justifyContent="center">
-      {themeMood ? (
+    <Box
+      alignItems="center"
+      _light={{bg: 'white'}}
+      _dark={{bg: '#1B262C'}}
+      justifyContent="center">
+      {colorMode === 'light' ? (
         <Lottie
           style={styles.lottie}
           source={require('../../../assets/images/loginAnimate.json')}
@@ -24,14 +26,7 @@ const ChooseLoginOrRegister = ({navigation}) => {
           loop
         />
       )}
-
-      <Text
-        mt="10"
-        _dark={{color: 'white'}}
-        _light={{color: 'white'}}
-        color="white"
-        mb="3"
-        fontSize="2xl">
+      <Text mt="10" mb="3" fontSize="2xl">
         𝖎𝖓𝖘𝖙𝖆 𝖘𝖙𝖔𝖗𝖞
       </Text>
       <Image
@@ -42,23 +37,29 @@ const ChooseLoginOrRegister = ({navigation}) => {
       />
       <Button
         onPress={() => navigation.navigate('login')}
-        bg="blue.600"
         borderRadius="8"
         width="90%"
         mt="10"
+        bg="darkBlue.500"
         size="lg">
         ورود
       </Button>
       <Button
         onPress={() => navigation.navigate('register')}
+        _light={{
+          bg: 'white',
+          _text: {color: 'black', fontSize: 16, fontWidth: 'bold'},
+        }}
+        _dark={{
+          bg: '#1B262C',
+          _text: {color: 'white', fontSize: 16, fontWidth: 'bold'},
+        }}
+        fontSize="30"
+        fontWeight="bold"
         borderRadius="8"
-        borderColor="#BBE1FA"
+        borderColor="gray.600"
         borderWidth="1"
         width="90%"
-        _text={{
-          color: '#1F2937',
-        }}
-        bg="white"
         mt="3"
         size="lg">
         ثبت نام
