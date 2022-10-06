@@ -6,6 +6,8 @@ import React, {useEffect} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {MainDrawerBar} from '../MainDrawerBar';
 import Home from '../../Layouts/Home';
+import {HeaderBarIcon} from '../HeaderBarIcon';
+import {AllPostsStackBar} from '../AllPostsStackBar';
 
 function A({navigation}) {
   return (
@@ -48,36 +50,15 @@ const CustomIcon = ({name, size, focused, colorMode}) => {
 export const MainTabBarBottom = () => {
   const Tab = createBottomTabNavigator();
   const {colorMode, toggleColorMode} = useColorMode();
-  const HeaderBarIcon = () => {
-    return (
-      <Icon
-        style={{margin: 15}}
-        onPress={() => {
-          toggleColorMode();
-        }}
-        name={colorMode === 'light' ? 'sunny' : 'moon'}
-        size={25}
-        color={colorMode === 'light' ? 'orange' : 'white'}
-      />
-    );
-  };
   return (
     <Tab.Navigator
-      initialRouteName="main"
-      screenOptions={() => ({
+      screenOptions={{
+        headerShown: false,
         tabBarStyle: {
           backgroundColor: colorMode === 'light' ? 'white' : '#0F4C75',
         },
-        headerTintColor: colorMode === 'light' ? 'black' : 'white',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 17,
-        },
-        headerRight: () => <HeaderBarIcon />,
-        headerStyle: {
-          backgroundColor: colorMode === 'light' ? '#f5f2f2' : '#0F4C75',
-        },
-      })}>
+      }}
+      initialRouteName="AllPostsStackBar">
       <Tab.Screen
         options={{
           tabBarLabel: () => null,
@@ -128,8 +109,8 @@ export const MainTabBarBottom = () => {
             );
           },
         }}
-        name="c"
-        component={Home}
+        name="AllPostsStackBar"
+        component={AllPostsStackBar}
       />
       <Tab.Screen
         options={{
