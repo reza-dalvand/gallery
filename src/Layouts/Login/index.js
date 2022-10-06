@@ -80,7 +80,7 @@ const Login = ({navigation}) => {
             </Button>
           </Box>
           <Button
-            onPress={() => navigation.navigate('login')}
+            onPress={() => navigation.navigate('Tab')}
             borderRadius="8"
             width="90%"
             mt="5"

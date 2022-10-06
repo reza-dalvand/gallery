@@ -15,26 +15,7 @@ I18nManager.forceRTL(true);
 ConfigureAxios(axios, store);
 
 const mainApp = ({children}) => {
-  const theme = extendTheme({
-    components: {
-      // Button: {
-      //   baseStyle: () => {
-      //     return {
-      //       _dark: {bg: 'darkBlue.500'},
-      //       _light: {bg: 'darkBlue.500'},
-      //     };
-      //   },
-      // },
-      // Text: {
-      //   baseStyle: () => {
-      //     return {
-      //       _dark: {color: 'white'},
-      //       _light: {color: 'black'},
-      //     };
-      //   },
-      // },
-    },
-  });
+  const theme = extendTheme({});
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
