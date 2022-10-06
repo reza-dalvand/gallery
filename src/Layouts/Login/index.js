@@ -12,9 +12,6 @@ import {
   FormControl,
 } from 'native-base';
 import Lottie from 'lottie-react-native';
-import CustomInput from '../../Components/CustomInput';
-import CustomButton from '../../Components/CustomButton';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Login = ({navigation}) => {
   const {colorMode, toggleColorMode} = useColorMode();
@@ -83,13 +80,13 @@ const Login = ({navigation}) => {
             onPress={() => navigation.navigate('Tab')}
             borderRadius="8"
             width="90%"
-            mt="5"
+            mt="4"
             bg="darkBlue.500"
             size="lg">
             ورود
           </Button>
         </Box>
-        <Box mt="3">
+        <Box mt="2">
           <Button
             onPress={() => navigation.navigate('register')}
             _text={{color: 'blue.600'}}

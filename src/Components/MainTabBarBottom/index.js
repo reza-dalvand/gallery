@@ -38,7 +38,7 @@ const CustomIcon = ({name, size, focused, colorMode}) => {
             : 'white'
           : colorMode === 'dark'
           ? 'gray'
-          : '#CDC9C3'
+          : '#999696'
       }
       size={size}
     />
@@ -66,12 +66,14 @@ export const MainTabBarBottom = () => {
       initialRouteName="main"
       screenOptions={() => ({
         tabBarStyle: {
-          backgroundColor: colorMode === 'light' ? '#f5f2f2' : '#0F4C75',
+          backgroundColor: colorMode === 'light' ? 'white' : '#0F4C75',
         },
         headerTintColor: colorMode === 'light' ? 'black' : 'white',
-
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 17,
+        },
         headerRight: () => <HeaderBarIcon />,
-
         headerStyle: {
           backgroundColor: colorMode === 'light' ? '#f5f2f2' : '#0F4C75',
         },
@@ -113,7 +115,7 @@ export const MainTabBarBottom = () => {
       />
       <Tab.Screen
         options={{
-          title: 'خانه',
+          title: 'صفحه اصلی',
           tabBarLabel: () => null,
           tabBarIcon: ({color, focused, size}) => {
             return (

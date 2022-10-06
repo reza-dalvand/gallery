@@ -7,23 +7,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {useColorMode} from 'native-base';
 import {MainTabBarBottom} from '../MainTabBarBottom';
 import {MainStackBar} from '../MainStackBar';
+import {HeaderBarIcon} from '../HeaderBarIcon';
 
 export const AuthStackBar = () => {
   const Stack = createStackNavigator();
   const {colorMode, toggleColorMode} = useColorMode();
-  const HeaderBarIcon = () => {
-    return (
-      <Icon
-        style={{margin: 15}}
-        onPress={() => {
-          toggleColorMode();
-        }}
-        name={colorMode === 'light' ? 'sunny' : 'moon'}
-        size={25}
-        color={colorMode === 'light' ? 'orange' : 'white'}
-      />
-    );
-  };
+
   return (
     <Stack.Navigator initialRouteName="choose">
       <Stack.Group
