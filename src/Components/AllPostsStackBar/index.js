@@ -4,6 +4,7 @@ import {useColorMode} from 'native-base';
 import {HeaderBarIcon} from '../HeaderBarIcon';
 import AllPosts from '../../Layouts/AllPosts';
 import Home from '../../Layouts/Home';
+import SinglePost from '../../Layouts/SinglePost';
 
 export const AllPostsStackBar = () => {
   const Stack = createStackNavigator();
@@ -34,7 +35,7 @@ export const AllPostsStackBar = () => {
         />
         <Stack.Screen
           options={{title: 'نمایش همه'}}
-          name="AllPosts"
+          name="singlePost"
           component={SinglePost}
         />
       </Stack.Group>

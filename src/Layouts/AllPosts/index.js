@@ -1,7 +1,6 @@
 import React from 'react';
 import MasonryList from '@react-native-seoul/masonry-list';
-import {Box, Center, Image, Skeleton, useColorMode, VStack} from 'native-base';
-import {useMemo, useState} from 'react';
+
 import {CardItem} from './Components/CardItem';
 const data = [
   {
@@ -114,7 +113,7 @@ const AllPosts = ({navigation}) => {
       refreshing={false}
       // onRefresh={() => null}
       onEndReachedThreshold={0.1}
-      onEndReached={() => console.log('onEndReached')}
+      onEndReached={() => null}
     />
   );
 };

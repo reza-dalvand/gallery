@@ -1,19 +1,20 @@
 import React from 'react';
 import {Box, Button, Image, Text} from 'native-base';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 const SinglePost = () => {
   const navigation = useNavigation();
+  const {params} = useRoute();
   return (
     <Box flex="1">
       <Image
         source={{
-          uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9DX-QguYYnIQsHPLN2rzzgTdY7iNX2r74A&usqp=CAU',
+          uri: params?.post.url,
         }}
         w="100%"
         h="100%"
         borderRadius={8}
-        resizeMode="cover"
+        resizeMode="contain"
         alt="image"
       />
     </Box>
