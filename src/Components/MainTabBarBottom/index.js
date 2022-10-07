@@ -96,6 +96,7 @@ export const MainTabBarBottom = () => {
       />
       <Tab.Screen
         options={{
+          // tabBarStyle: {display: 'none'},
           title: 'صفحه اصلی',
           tabBarLabel: () => null,
           tabBarIcon: ({color, focused, size}) => {

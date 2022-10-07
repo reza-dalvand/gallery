@@ -6,7 +6,7 @@ import AllPosts from '../../Layouts/AllPosts';
 import Home from '../../Layouts/Home';
 import SinglePost from '../../Layouts/SinglePost';
 
-export const AllPostsStackBar = () => {
+export const AllPostsStackBar = ({navigation, route}) => {
   const Stack = createStackNavigator();
   const {colorMode, toggleColorMode} = useColorMode();
   return (
