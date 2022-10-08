@@ -8,6 +8,12 @@ import {MainDrawerBar} from '../MainDrawerBar';
 import Home from '../../Layouts/Home';
 import {HeaderBarIcon} from '../HeaderBarIcon';
 import {AllPostsStackBar} from '../AllPostsStackBar';
+import SinglePost from '../../Layouts/SinglePost';
+import AllPosts from '../../Layouts/AllPosts';
+import Favorites from '../../Layouts/Favorites';
+import {FavoritesStackBar} from '../FavoritesStackBar';
+import Profile from '../../Layouts/Profile';
+import {ProfileStackBar} from '../ProfileStackBar';
 
 function A({navigation}) {
   return (
@@ -73,13 +79,12 @@ export const MainTabBarBottom = () => {
             );
           },
         }}
-        name="main"
-        component={C}
+        name="ProfileStackBar"
+        component={ProfileStackBar}
       />
       <Tab.Screen
         options={{
           tabBarLabel: () => null,
-          tabBarActiveTintColor: 'red',
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
@@ -91,8 +96,8 @@ export const MainTabBarBottom = () => {
             );
           },
         }}
-        name="Settings"
-        component={B}
+        name="FavoritesBar"
+        component={FavoritesStackBar}
       />
       <Tab.Screen
         options={{
@@ -116,6 +121,23 @@ export const MainTabBarBottom = () => {
       <Tab.Screen
         options={{
           tabBarLabel: () => null,
+          tabBarIcon: ({focused}) => {
+            return (
+              <CustomIcon
+                focused={focused}
+                name="videocam-outline"
+                colorMode={colorMode}
+                size={30}
+              />
+            );
+          },
+        }}
+        name="a"
+        component={A}
+      />
+      <Tab.Screen
+        options={{
+          tabBarLabel: () => null,
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
@@ -129,23 +151,6 @@ export const MainTabBarBottom = () => {
         }}
         name="d"
         component={D}
-      />
-      <Tab.Screen
-        options={{
-          tabBarLabel: () => null,
-          tabBarIcon: ({focused}) => {
-            return (
-              <CustomIcon
-                focused={focused}
-                name="add-circle-outline"
-                colorMode={colorMode}
-                size={30}
-              />
-            );
-          },
-        }}
-        name="a"
-        component={A}
       />
     </Tab.Navigator>
   );

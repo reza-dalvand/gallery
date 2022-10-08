@@ -12,12 +12,12 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {Actionsheet} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const SinglePost = () => {
+const SingleFavorite = () => {
   const {params} = useRoute();
   const {isOpen, onOpen, onClose} = useDisclose();
   const toast = useToast();
 
-  const [whichHeart, setWhichHeart] = useState(false);
+  const [whichHeart, setWhichHeart] = useState(true);
   return (
     <Box flex="1">
       <Center>
@@ -100,4 +100,4 @@ const SinglePost = () => {
   );
 };
 
-export default SinglePost;
+export default SingleFavorite;

@@ -5,12 +5,16 @@ import {HeaderBarIcon} from '../HeaderBarIcon';
 import AllPosts from '../../Layouts/AllPosts';
 import Home from '../../Layouts/Home';
 import SinglePost from '../../Layouts/SinglePost';
+import Favorites from '../../Layouts/Favorites';
+import SingleFavorite from '../../Layouts/SingleFavorite';
+import Profile from '../../Layouts/Profile';
+import ChangeInformationByUser from '../../Layouts/ChangeInformationByUser';
 
-export const AllPostsStackBar = ({navigation, route}) => {
+export const ProfileStackBar = ({navigation, route}) => {
   const Stack = createStackNavigator();
   const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <Stack.Navigator initialRouteName="home">
+    <Stack.Navigator initialRouteName="profile">
       <Stack.Group
         screenOptions={() => ({
           headerTintColor: colorMode === 'light' ? 'black' : 'white',
@@ -24,19 +28,14 @@ export const AllPostsStackBar = ({navigation, route}) => {
           },
         })}>
         <Stack.Screen
-          options={{title: 'صفحه اصلی'}}
-          name="home"
-          component={Home}
+          options={{title: 'پروفایل', headerShown: false}}
+          name="profile"
+          component={Profile}
         />
         <Stack.Screen
-          options={{title: 'نمایش همه'}}
-          name="AllPosts"
-          component={AllPosts}
-        />
-        <Stack.Screen
-          options={{title: 'نمایش پست'}}
-          name="singlePost"
-          component={SinglePost}
+          options={{title: 'ویرایش پروفایل', headerShown: false}}
+          name="changeInformation"
+          component={ChangeInformationByUser}
         />
       </Stack.Group>
     </Stack.Navigator>
