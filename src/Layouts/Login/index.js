@@ -16,6 +16,13 @@ import Lottie from 'lottie-react-native';
 const Login = ({navigation}) => {
   const {colorMode, toggleColorMode} = useColorMode();
 
+  let box = (
+    <Box mt={1} style={{marginRight: '25%'}}>
+      <Button _text={{color: 'blue.600'}} size="md" variant="link">
+        رمز عبور خود را فراموش کرده اید ؟
+      </Button>
+    </Box>
+  );
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Box
@@ -71,11 +78,7 @@ const Login = ({navigation}) => {
           {/*  Atleast 6 characters are required.*/}
           {/*</FormControl.ErrorMessage>*/}
 
-          <Box mt={1} style={{marginRight: '25%'}}>
-            <Button _text={{color: 'blue.600'}} size="md" variant="link">
-              رمز عبور خود را فراموش کرده اید ؟
-            </Button>
-          </Box>
+          {box}
           <Button
             onPress={() => navigation.navigate('Tab')}
             borderRadius="8"

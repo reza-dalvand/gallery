@@ -67,7 +67,7 @@ export const MainTabBarBottom = () => {
       initialRouteName="AllPostsStackBar">
       <Tab.Screen
         options={{
-          tabBarLabel: () => null,
+          tabBarLabel: 'پروفایل',
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
@@ -84,7 +84,7 @@ export const MainTabBarBottom = () => {
       />
       <Tab.Screen
         options={{
-          tabBarLabel: () => null,
+          tabBarLabel: 'مورد علاقه ها',
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
@@ -103,7 +103,7 @@ export const MainTabBarBottom = () => {
         options={{
           // tabBarStyle: {display: 'none'},
           title: 'صفحه اصلی',
-          tabBarLabel: () => null,
+          tabBarLabel: 'عکس ها',
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
@@ -120,7 +120,7 @@ export const MainTabBarBottom = () => {
       />
       <Tab.Screen
         options={{
-          tabBarLabel: () => null,
+          tabBarLabel: 'کلیپ ها',
           tabBarIcon: ({focused}) => {
             return (
               <CustomIcon
@@ -137,7 +137,7 @@ export const MainTabBarBottom = () => {
       />
       <Tab.Screen
         options={{
-          tabBarLabel: () => null,
+          tabBarLabel: 'دانلودر',
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon

@@ -9,6 +9,11 @@ import Favorites from '../../Layouts/Favorites';
 import SingleFavorite from '../../Layouts/SingleFavorite';
 import Profile from '../../Layouts/Profile';
 import ChangeInformationByUser from '../../Layouts/ChangeInformationByUser';
+import SendEmail from '../../Layouts/SendEmail';
+import CheckEmail from '../../Layouts/CheckEmail';
+import ChangePassword from '../../Layouts/ChangePassword';
+import ContactUs from '../../Layouts/ContackUs';
+import AboutUs from '../../Layouts/AboutUs';
 
 export const ProfileStackBar = ({navigation, route}) => {
   const Stack = createStackNavigator();
@@ -36,6 +41,31 @@ export const ProfileStackBar = ({navigation, route}) => {
           options={{title: 'ویرایش پروفایل', headerShown: false}}
           name="changeInformation"
           component={ChangeInformationByUser}
+        />
+        <Stack.Screen
+          options={{title: 'ارسال ایمیل'}}
+          name="sendEmail"
+          component={SendEmail}
+        />
+        <Stack.Screen
+          options={{title: 'چک کردن ایمیل'}}
+          name="checkEmail"
+          component={CheckEmail}
+        />
+        <Stack.Screen
+          options={{title: 'تغییر رمز عبور'}}
+          name="changePassword"
+          component={ChangePassword}
+        />
+        <Stack.Screen
+          options={{title: 'تماس با ما'}}
+          name="contactUs"
+          component={ContactUs}
+        />
+        <Stack.Screen
+          options={{title: 'درباره ما'}}
+          name="aboutUs"
+          component={AboutUs}
         />
       </Stack.Group>
     </Stack.Navigator>

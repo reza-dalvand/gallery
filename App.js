@@ -16,9 +16,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   containerMainApp: {
-    fontFamily: 'Vazir',
+    fontFamily: 'Vazir, Regular',
     flex: 1,
-    backgroundColor: 'white',
   },
 });
 

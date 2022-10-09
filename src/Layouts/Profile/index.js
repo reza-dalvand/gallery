@@ -29,9 +29,10 @@ const Profile = ({navigation}) => {
   const toast = useToast();
   const {colorMode, toggleColorMode} = useColorMode();
 
-  const CustomButtonOption = ({name}) => {
+  const CustomButtonOption = ({name, onPress}) => {
     return (
       <TouchableOpacity
+        onPress={onPress}
         style={{
           backgroundColor: colorMode === 'light' ? 'white' : 'gray',
           borderBottomWidth: 1,
@@ -120,15 +121,24 @@ const Profile = ({navigation}) => {
       {/*options*/}
       <ScrollView>
         <Box _light={{bg: 'white'}} _dark={{bg: 'gray.400'}} mt={3}>
-          <CustomButtonOption name="تغییر رمز عبور" />
-          <CustomButtonOption name="تماس با ما" />
-          <CustomButtonOption name="درباره ما" />
+          <CustomButtonOption
+            onPress={() => navigation.navigate('sendEmail')}
+            name="تغییر رمز عبور"
+          />
+          <CustomButtonOption
+            onPress={() => navigation.navigate('contactUs')}
+            name="تماس با ما"
+          />
+          <CustomButtonOption
+            onPress={() => navigation.navigate('aboutUs')}
+            name="درباره ما"
+          />
         </Box>
         <Box _light={{bg: '#F0F4F4'}} _dark={{bg: '#1B262C'}} mt={3}>
           <CustomButtonOption name="ارسال تیکت" />
           <CustomButtonOption name="توافق نامه" />
         </Box>
-        <Box h={500} />
+        <Box h={450} />
       </ScrollView>
     </Box>
   );
