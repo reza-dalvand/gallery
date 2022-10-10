@@ -4,7 +4,7 @@ import {ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {TouchableOpacity} from 'react-native';
 
-const CustomBox = ({iconName, myColor}) => {
+const CustomBox = ({iconName, myColor, onPress}) => {
   return (
     <TouchableOpacity style={{width: '28%'}}>
       <Box
@@ -16,6 +16,7 @@ const CustomBox = ({iconName, myColor}) => {
         height="100"
         bg={myColor ? 'red.500' : 'gray.300'}>
         <Icon
+          onPress={onPress}
           name={iconName}
           color={myColor ? 'white' : 'gray.800'}
           size={30}
@@ -114,7 +115,11 @@ const Profile = ({navigation}) => {
         flexDir="row"
         alignItems="center"
         justifyContent="space-around">
-        <CustomBox myColor={true} iconName="power" />
+        <CustomBox
+          myColor={true}
+          iconName="power"
+          onPress={() => navigation.navigate('login')}
+        />
         <CustomBox iconName="ios-lock-closed-outline" />
         <CustomBox iconName="key-outline" />
       </Box>

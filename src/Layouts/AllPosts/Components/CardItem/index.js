@@ -5,7 +5,6 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 
 export const CardItem = ({item}) => {
   const navigation = useNavigation();
-  const route = useRoute();
   const randomBool = useMemo(() => Math.random() < 0.5, []);
   const [isLoaded, setIsLoaded] = useState(false);
   setTimeout(() => {

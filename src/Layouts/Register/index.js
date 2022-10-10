@@ -16,7 +16,9 @@ const Register = ({navigation}) => {
   const {colorMode, toggleColorMode} = useColorMode();
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      contentContainerStyle={{flexGrow: 1}}
+      showsVerticalScrollIndicator={false}>
       <Box
         _light={{bg: 'white'}}
         _dark={{bg: '#1B262C'}}
@@ -99,7 +101,6 @@ const Register = ({navigation}) => {
           </Button>
         </Box>
       </Box>
-      <Box style={{marginTop: 100}} />
     </ScrollView>
   );
 };

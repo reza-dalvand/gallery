@@ -24,7 +24,9 @@ const Login = ({navigation}) => {
     </Box>
   );
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      contentContainerStyle={{flexGrow: 1}}
+      showsVerticalScrollIndicator={false}>
       <Box
         _light={{bg: 'white'}}
         _dark={{bg: '#1B262C'}}
@@ -98,7 +100,6 @@ const Login = ({navigation}) => {
             در صورت نداشتن اکانت کلیک کنید؟
           </Button>
         </Box>
-        <View style={{marginTop: 100}} />
       </Box>
     </ScrollView>
   );

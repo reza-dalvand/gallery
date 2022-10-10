@@ -1,39 +1,13 @@
-import {View} from 'react-native';
-import {Box, Button, Text, useColorMode} from 'native-base';
+import {useColorMode} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Fontisto from 'react-native-vector-icons/Fontisto';
-import React, {useEffect} from 'react';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {MainDrawerBar} from '../MainDrawerBar';
-import Home from '../../Layouts/Home';
-import {HeaderBarIcon} from '../HeaderBarIcon';
 import {AllPostsStackBar} from '../AllPostsStackBar';
-import SinglePost from '../../Layouts/SinglePost';
-import AllPosts from '../../Layouts/AllPosts';
-import Favorites from '../../Layouts/Favorites';
 import {FavoritesStackBar} from '../FavoritesStackBar';
-import Profile from '../../Layouts/Profile';
 import {ProfileStackBar} from '../ProfileStackBar';
-
-function A({navigation}) {
-  return (
-    <Box flex={1} bg="white">
-      <Button onPress={() => navigation.navigate('c')}>ssss</Button>
-    </Box>
-  );
-}
-function B() {
-  return <Box flex={1} bg="white"></Box>;
-}
-function C() {
-  return <Box flex={1} bg="white"></Box>;
-}
-function D() {
-  return <Box flex={1} bg="white"></Box>;
-}
-function F() {
-  return <Box flex={1} bg="white"></Box>;
-}
+import {VideosStackBar} from '../VideosStackBar';
+import Downloader from '../../Layouts/Downloader';
+import {HeaderBarIcon} from '../HeaderBarIcon';
 
 const CustomIcon = ({name, size, focused, colorMode}) => {
   return (
@@ -59,6 +33,7 @@ export const MainTabBarBottom = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarActiveTintColor: colorMode === 'light' ? 'black' : 'white',
         headerShown: false,
         tabBarStyle: {
           backgroundColor: colorMode === 'light' ? 'white' : '#0F4C75',
@@ -132,12 +107,23 @@ export const MainTabBarBottom = () => {
             );
           },
         }}
-        name="a"
-        component={A}
+        name="VideosStackBar"
+        component={VideosStackBar}
       />
       <Tab.Screen
         options={{
+          headerTintColor: colorMode === 'light' ? 'black' : 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 17,
+          },
+          headerRight: () => <HeaderBarIcon />,
+          headerStyle: {
+            backgroundColor: colorMode === 'light' ? 'white' : '#0F4C75',
+          },
+          title: 'دانلودر',
           tabBarLabel: 'دانلودر',
+          headerShown: true,
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
@@ -149,8 +135,8 @@ export const MainTabBarBottom = () => {
             );
           },
         }}
-        name="d"
-        component={D}
+        name="downloader"
+        component={Downloader}
       />
     </Tab.Navigator>
   );

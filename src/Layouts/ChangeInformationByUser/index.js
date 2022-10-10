@@ -14,7 +14,10 @@ import {useNavigation} from '@react-navigation/native';
 const ChangeInformationByUser = ({navigation}) => {
   const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <ScrollView>
+    <ScrollView
+      _light={{bg: 'white'}}
+      _dark={{bg: '#1B262C'}}
+      contentContainerStyle={{flexGrow: 1}}>
       {/*header*/}
       <Box bg="#1B262C">
         <Box
@@ -79,35 +82,31 @@ const ChangeInformationByUser = ({navigation}) => {
         <FormControl.Label>نام کاربری</FormControl.Label>
         <Input
           mb={3}
-          value="Reza_dlv"
           variant="underlined"
-          placeholder="نام کاربری"
+          placeholder="نام کاربری خود را وارد کنید..."
         />
         <FormControl.Label>ایمیل</FormControl.Label>
         <Input
           mb={3}
-          value="rdalvand@yahoo.com"
           variant="underlined"
-          placeholder="ایمیل"
+          placeholder="ایمیل خود را وارد کنید..."
         />
         <FormControl.Label>نام</FormControl.Label>
-        <Input mb={3} value="رضا" variant="underlined" placeholder="نام" />
+        <Input
+          mb={3}
+          variant="underlined"
+          placeholder="نام خود را وارد کنید..."
+        />
         <FormControl.Label>نام خانوادگی</FormControl.Label>
         <Input
           mb={3}
-          value="دالوند"
           variant="underlined"
-          placeholder="نام خانوادگی"
+          placeholder="نام خانوادگی خود را وارد کنید..."
         />
         <FormControl.Label>شماره تماس</FormControl.Label>
-        <Input
-          mb={3}
-          value="09909412001"
-          variant="underlined"
-          placeholder="نام خانوادگی"
-        />
+        <Input mb={3} value="" variant="underlined" placeholder="09123456789" />
       </Box>
-      <Box mt={2} justifyContent="center" alignItems="center">
+      <Box mb={5} mt={2} justifyContent="center" alignItems="center">
         <Button
           onPress={() => navigation.navigate('Tab')}
           borderRadius="8"
@@ -118,7 +117,6 @@ const ChangeInformationByUser = ({navigation}) => {
           ویرایش
         </Button>
       </Box>
-      <Box h={100} />
     </ScrollView>
   );
 };

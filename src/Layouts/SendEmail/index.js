@@ -16,7 +16,7 @@ const SendEmail = ({navigation}) => {
   const toast = useToast();
   const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <Box
         flex={1}
         alignItems="center"
