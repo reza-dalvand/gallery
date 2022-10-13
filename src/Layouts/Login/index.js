@@ -34,7 +34,7 @@ const Login = ({navigation}) => {
         p="1"
         justifyContent="center"
         alignItems="center">
-        <Text mt={5} fontSize="30" fontWeight="bold">
+        <Text fontFamily="Vazir-Bold" mt={5} fontSize="30">
           خوش آمدید
         </Text>
         {colorMode === 'light' ? (

@@ -15,7 +15,49 @@ I18nManager.forceRTL(true);
 ConfigureAxios(axios, store);
 
 const mainApp = ({children}) => {
-  const theme = extendTheme({});
+  const theme = extendTheme({
+    fontConfig: {
+      Vazir: {
+        100: {
+          normal: 'Vazir-Thin',
+        },
+        200: {
+          normal: 'Vazir-Light',
+        },
+        300: {
+          normal: 'Vazir',
+        },
+        400: {
+          normal: 'Vazir-Medium',
+        },
+        500: {
+          normal: 'Vazir-Medium',
+        },
+        600: {
+          normal: 'Vazir-Bold',
+        },
+        // Add more variants
+        //   700: {
+        //     normal: 'Vazir-Bold-Bold',
+        //   },
+        //   800: {
+        //     normal: 'Vazir-Bold-Bold',
+        //     italic: 'Vazir-Bold-BoldItalic',
+        //   },
+        //   900: {
+        //     normal: 'Vazir-Bold-Bold',
+        //     italic: 'Vazir-Bold-BoldItalic',
+        //   },
+      },
+    },
+
+    // Make sure values below matches any of the keys in `fontConfig`
+    fonts: {
+      heading: 'Vazir-Bold',
+      body: 'Vazir-Medium',
+      mono: 'Vazir',
+    },
+  });
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
