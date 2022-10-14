@@ -63,9 +63,7 @@ const AboutUs = ({navigation}) => {
           />
         </Box>
         <Box w="100%" mt={4}>
-          <Text fontSize={22} fontWeight="bold">
-            اطلاعات تماس
-          </Text>
+          <Text fontSize={22}>اطلاعات تماس</Text>
           <Box
             p={2}
             flexDir="row"
@@ -104,9 +102,7 @@ const AboutUs = ({navigation}) => {
         </Box>
 
         <Box p={1} mt={2}>
-          <Text fontSize={22} fontWeight="bold">
-            درباره ما
-          </Text>
+          <Text fontSize={22}>درباره ما</Text>
           <Text>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
@@ -122,9 +118,7 @@ const AboutUs = ({navigation}) => {
           </Text>
         </Box>
         <Box mt={3}>
-          <Text fontSize={22} fontWeight="bold">
-            سوابق
-          </Text>
+          <Text fontSize={22}>سوابق</Text>
           <Text>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در

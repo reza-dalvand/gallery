@@ -18,7 +18,7 @@ const Login = ({navigation}) => {
 
   let box = (
     <Box mt={1} style={{marginRight: '25%'}}>
-      <Button _text={{color: 'blue.600'}} size="md" variant="link">
+      <Button _text={{color: 'blue.600'}} size="sm" variant="link">
         رمز عبور خود را فراموش کرده اید ؟
       </Button>
     </Box>
@@ -95,7 +95,7 @@ const Login = ({navigation}) => {
           <Button
             onPress={() => navigation.navigate('register')}
             _text={{color: 'blue.600'}}
-            size="md"
+            size="sm"
             variant="link">
             در صورت نداشتن اکانت کلیک کنید؟
           </Button>

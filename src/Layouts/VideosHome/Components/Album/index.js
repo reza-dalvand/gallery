@@ -78,7 +78,7 @@ export const Album = () => {
           flexDir="row"
           justifyContent="space-between"
           alignItems="center">
-          <Text ml={3} fontSize="18" fontWeight="extrabold">
+          <Text ml={3} fontSize="18">
             ویدو های شاد
           </Text>
           <Button

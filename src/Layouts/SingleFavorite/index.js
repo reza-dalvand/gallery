@@ -61,7 +61,7 @@ const SingleFavorite = () => {
       <Box w="100%" alignItems="center" position="absolute" bottom={3}>
         <Button
           fontSize="30"
-          fontWeight="bold"
+          // fontWeight="bold"
           borderRadius={8}
           w="35%"
           bg="darkBlue.500"

@@ -84,7 +84,7 @@ const ContactUs = ({navigation}) => {
           w="100%"
           borderTopRadius={30}>
           <Box>
-            <Text fontWeight="bold">نام و نام خانوادگی</Text>
+            <Text>نام و نام خانوادگی</Text>
             <Input
               bg="gray.100"
               mt={2}
@@ -95,9 +95,7 @@ const ContactUs = ({navigation}) => {
               borderColor="#BBE1FA"
               placeholderTextColor="gray.500"
             />
-            <Text mt={1} fontWeight="bold">
-              آدرس ایمیل
-            </Text>
+            <Text mt={1}>آدرس ایمیل</Text>
             <Input
               bg="gray.100"
               mt={2}
@@ -109,9 +107,7 @@ const ContactUs = ({navigation}) => {
               borderColor="#BBE1FA"
               placeholderTextColor="gray.500"
             />
-            <Text mt={1} fontWeight="bold">
-              متن پیام
-            </Text>
+            <Text mt={1}>متن پیام</Text>
             <TextArea
               bg="gray.100"
               mt={2}

@@ -30,9 +30,7 @@ const ChangePassword = ({navigation}) => {
           loop
         />
         <Box mt={3}>
-          <Text fontSize={30} fontWeight="bold">
-            تغییر رمز عبور
-          </Text>
+          <Text fontSize={30}>تغییر رمز عبور</Text>
           <Text mt={3} fontSize={16}>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در

@@ -27,7 +27,7 @@ export const VideosStackBar = ({navigation, route}) => {
         screenOptions={() => ({
           headerTintColor: colorMode === 'light' ? 'black' : 'white',
           headerTitleStyle: {
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
             fontSize: 17,
           },
           headerRight: () => <HeaderBarIcon />,

@@ -47,9 +47,7 @@ const Profile = ({navigation}) => {
           alignItems="center"
           justifyContent="space-between"
           height="65">
-          <Text fontSize={15} fontWeight="bold">
-            {name}
-          </Text>
+          <Text fontSize={15}>{name}</Text>
           <Icon
             name={'ios-arrow-back-circle-outline'}
             color={colorMode === 'light' ? 'black' : 'white'}
@@ -63,7 +61,7 @@ const Profile = ({navigation}) => {
     <Box _light={{bg: '#F0F4F4'}} _dark={{bg: '#1B262C'}}>
       {/*//header*/}
       <Box h="250" bg="#1B262C">
-        <Text ml={4} mt={5} color="white" fontSize={26} fontWeight="bold">
+        <Text ml={4} mt={5} color="white" fontSize={26}>
           پروفایل
         </Text>
         <Box flexDir="row" justifyContent="space-between" alignItems="center">

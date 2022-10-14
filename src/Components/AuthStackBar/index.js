@@ -26,6 +26,7 @@ export const AuthStackBar = () => {
           headerTitleStyle: {
             fontWeight: 'bold',
             fontSize: 17,
+            fontFamily: 'Vazir',
           },
         }}>
         <Stack.Screen name="choose" component={ChooseLoginOrRegister} />

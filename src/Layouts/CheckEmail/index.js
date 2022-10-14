@@ -30,9 +30,7 @@ const CheckEmail = ({navigation}) => {
         />
       </Box>
       <Box width="100%" alignItems="center" mt={6}>
-        <Text fontSize={25} fontWeight="bold">
-          ایمیل خود را چک کنید
-        </Text>
+        <Text fontSize={25}>ایمیل خود را چک کنید</Text>
         <Text mt={3} fontSize={16}>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در

@@ -19,7 +19,7 @@ export const MainStackBar = () => {
           headerRight: () => <HeaderBarIcon />,
           headerTintColor: colorMode === 'light' ? 'black' : 'white',
           headerTitleStyle: {
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
             fontSize: 17,
           },
         }}>

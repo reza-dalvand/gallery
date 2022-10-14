@@ -34,7 +34,7 @@ const Downloader = ({navigation}) => {
             <Text mt={10} color="darkBlue.500">
               https://www.w3schools.com/html/mov_bbb.mp4
             </Text>
-            <Text mt={3} color="green.600" fontSize="30" fontWeight="bold">
+            <Text mt={3} color="green.600" fontSize="30">
               فایل مورد نظر یافت شد.
             </Text>
 
@@ -51,9 +51,7 @@ const Downloader = ({navigation}) => {
         </Fragment>
       ) : (
         <>
-          <Text fontWeight="bold" fontSize={30}>
-            اینستا دانلودر
-          </Text>
+          <Text fontSize={30}>اینستا دانلودر</Text>
           <Lottie
             style={{width: '80%', marginTop: '3%'}}
             source={require('../../../assets/images/animateDownloader.json')}

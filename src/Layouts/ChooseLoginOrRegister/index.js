@@ -55,7 +55,6 @@ const ChooseLoginOrRegister = ({navigation}) => {
           _text: {color: 'white', fontSize: 16, fontWidth: 'bold'},
         }}
         fontSize="30"
-        fontWeight="bold"
         borderRadius="8"
         borderColor="gray.600"
         borderWidth="1"

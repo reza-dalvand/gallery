@@ -54,7 +54,7 @@ export const Album = () => {
         flexDir="row"
         justifyContent="space-between"
         alignItems="center">
-        <Text ml={3} fontSize="18" fontWeight="extrabold">
+        <Text bold ml={3} fontSize="xl">
           دسته بندی شاد
         </Text>
         <Button

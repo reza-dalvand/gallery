@@ -33,6 +33,7 @@ export const MainTabBarBottom = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarLabelStyle: {fontFamily: 'Vazir'},
         tabBarActiveTintColor: colorMode === 'light' ? 'black' : 'white',
         headerShown: false,
         tabBarStyle: {
@@ -114,7 +115,7 @@ export const MainTabBarBottom = () => {
         options={{
           headerTintColor: colorMode === 'light' ? 'black' : 'white',
           headerTitleStyle: {
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
             fontSize: 17,
           },
           headerRight: () => <HeaderBarIcon />,
