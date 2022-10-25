@@ -43,12 +43,12 @@ export const MainTabBarBottom = () => {
       initialRouteName="AllPostsStackBar">
       <Tab.Screen
         options={{
-          tabBarLabel: 'پروفایل',
+          tabBarLabel: 'تماس با ما',
           tabBarIcon: ({color, focused, size}) => {
             return (
               <CustomIcon
                 focused={focused}
-                name="person-outline"
+                name="mail-open-outline"
                 colorMode={colorMode}
                 size={24}
               />

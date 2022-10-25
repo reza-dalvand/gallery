@@ -14,7 +14,7 @@ export const AuthStackBar = () => {
   const {colorMode, toggleColorMode} = useColorMode();
 
   return (
-    <Stack.Navigator initialRouteName="choose">
+    <Stack.Navigator initialRouteName="Tab">
       <Stack.Group
         screenOptions={{
           headerStyle: {
@@ -29,9 +29,9 @@ export const AuthStackBar = () => {
             fontFamily: 'Vazir',
           },
         }}>
-        <Stack.Screen name="choose" component={ChooseLoginOrRegister} />
-        <Stack.Screen name="login" component={Login} />
-        <Stack.Screen name="register" component={Register} />
+        {/*<Stack.Screen name="choose" component={ChooseLoginOrRegister} />*/}
+        {/*<Stack.Screen name="login" component={Login} />*/}
+        {/*<Stack.Screen name="register" component={Register} />*/}
         <Stack.Screen
           options={{headerShown: false}}
           name="Tab"

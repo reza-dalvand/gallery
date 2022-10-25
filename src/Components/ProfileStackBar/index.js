@@ -19,7 +19,7 @@ export const ProfileStackBar = ({navigation, route}) => {
   const Stack = createStackNavigator();
   const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <Stack.Navigator initialRouteName="profile">
+    <Stack.Navigator initialRouteName="contactUs">
       <Stack.Group
         screenOptions={() => ({
           headerTintColor: colorMode === 'light' ? 'black' : 'white',
@@ -32,41 +32,41 @@ export const ProfileStackBar = ({navigation, route}) => {
             backgroundColor: colorMode === 'light' ? 'white' : '#0F4C75',
           },
         })}>
-        <Stack.Screen
-          options={{title: 'پروفایل', headerShown: false}}
-          name="profile"
-          component={Profile}
-        />
-        <Stack.Screen
-          options={{title: 'ویرایش پروفایل', headerShown: false}}
-          name="changeInformation"
-          component={ChangeInformationByUser}
-        />
-        <Stack.Screen
-          options={{title: 'ارسال ایمیل'}}
-          name="sendEmail"
-          component={SendEmail}
-        />
-        <Stack.Screen
-          options={{title: 'چک کردن ایمیل'}}
-          name="checkEmail"
-          component={CheckEmail}
-        />
-        <Stack.Screen
-          options={{title: 'تغییر رمز عبور'}}
-          name="changePassword"
-          component={ChangePassword}
-        />
+        {/*<Stack.Screen*/}
+        {/*  options={{title: 'پروفایل', headerShown: false}}*/}
+        {/*  name="profile"*/}
+        {/*  component={Profile}*/}
+        {/*/>*/}
+        {/*<Stack.Screen*/}
+        {/*  options={{title: 'ویرایش پروفایل', headerShown: false}}*/}
+        {/*  name="changeInformation"*/}
+        {/*  component={ChangeInformationByUser}*/}
+        {/*/>*/}
+        {/*<Stack.Screen*/}
+        {/*  options={{title: 'ارسال ایمیل'}}*/}
+        {/*  name="sendEmail"*/}
+        {/*  component={SendEmail}*/}
+        {/*/>*/}
+        {/*<Stack.Screen*/}
+        {/*  options={{title: 'چک کردن ایمیل'}}*/}
+        {/*  name="checkEmail"*/}
+        {/*  component={CheckEmail}*/}
+        {/*/>*/}
+        {/*<Stack.Screen*/}
+        {/*  options={{title: 'تغییر رمز عبور'}}*/}
+        {/*  name="changePassword"*/}
+        {/*  component={ChangePassword}*/}
+        {/*/>*/}
         <Stack.Screen
           options={{title: 'تماس با ما'}}
           name="contactUs"
           component={ContactUs}
         />
-        <Stack.Screen
-          options={{title: 'درباره ما'}}
-          name="aboutUs"
-          component={AboutUs}
-        />
+        {/*<Stack.Screen*/}
+        {/*  options={{title: 'درباره ما'}}*/}
+        {/*  name="aboutUs"*/}
+        {/*  component={AboutUs}*/}
+        {/*/>*/}
       </Stack.Group>
     </Stack.Navigator>
   );
